@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ard;
 
 import java.lang.*;
@@ -33,9 +29,7 @@ public class Test {
     
      public void run(){
      SP1 = new SerialPort("COM7");
-     
-     
-     
+
      
      try{
         SP1.openPort();
@@ -46,12 +40,10 @@ public class Test {
        String data = SP1.readString();
        System.out.println(data);}
       else SP1.writeString("1");
-     }}catch(SerialPortException ex){}
-     
-     //-------------------------------------
+     }}catch(SerialPortException ex){}=   
      }
-     //======================================
-   public static class PortW implements SerialPortEventListener{
+
+public static class PortW implements SerialPortEventListener{
    
         public void serialEvent(SerialPortEvent event){
          
