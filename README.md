@@ -2,8 +2,8 @@
 
 
 ### Description
-     2 simple example connect microcontroller Arduino to Java app through COM port
-     1 example connect through TCP/IP
+* 2 simple example connect microcontroller Arduino to Java app through COM port. 
+* 1 example connect through TCP/IP. 
  
 ### [Project Arduino](https://www.arduino.cc/)
  
