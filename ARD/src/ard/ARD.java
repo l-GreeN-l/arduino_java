@@ -1,4 +1,3 @@
-
 package ard;
 
 import java.lang.*;
@@ -18,10 +17,8 @@ public class ARD {
     private JButton HIGH;
     private JButton LOW;
     private JFrame Frame;
-    
     boolean tH= false;
-    boolean tL= false;
-    
+    boolean tL= false;    
     public ARD(){
     
     run();
@@ -34,17 +31,12 @@ public class ARD {
      public void run(){
          Frame = new JFrame("ARD");
          Frame.setSize(200,200);
-         Frame.setLayout(new FlowLayout());
-         
+         Frame.setLayout(new FlowLayout());     
      SP1 = new SerialPort("COM7");
-     
      HIGH= new JButton("HIGH");
      LOW= new JButton("LOW");
-     
-     
-     
-     
-       HIGH.addActionListener(new ActionListener(){
+
+    HIGH.addActionListener(new ActionListener(){
   public void actionPerformed(ActionEvent e) {
           
       tH=true;
@@ -52,8 +44,6 @@ public class ARD {
       System.out.println("HIGH");
           }});
        
-       
-     
       LOW.addActionListener(new ActionListener(){
   public void actionPerformed(ActionEvent e) {
             tH=false;
@@ -61,7 +51,6 @@ public class ARD {
        System.out.println("LOW");     
           }});
      
-    
       try{
         SP1.openPort();
      SP1.setParams(115200,8,1,0);
@@ -74,8 +63,7 @@ public class ARD {
       else SP1.writeString("1");*/
       SP1.writeInt(1);
      }
-     
-     
+        
     if(tL){
      /*    
       if(SP1.getInputBufferBytesCount()>0){
@@ -83,20 +71,18 @@ public class ARD {
        System.out.println(data);}
       else SP1.writeString("2");*/
      
-     SP1.writeInt(2);
-     
+     SP1.writeInt(2);  
     } 
      
  }catch(SerialPortException ex){} 
       
       Frame.add(HIGH);
       Frame.add(LOW);
-      
       Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Frame.setVisible(true);
-//-------------------------------------
      }
-//======================================
+    
+    
    public static class PortW implements SerialPortEventListener{
    
         public void serialEvent(SerialPortEvent event){
